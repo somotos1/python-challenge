@@ -39,12 +39,13 @@ with open('budget_data.csv', 'r') as csvfile:
             # go to the next row if previous amount is none
             continue
         chg_sum = chg_sum + (current_amount - previous_amount)
-        # If the current amount - previous amount result is greater than current max increase
+        # If the current amount - previous amount result is greater than current max increase set max inc amount and date
         if (current_amount - previous_amount) > current_max_inc:
             current_max_inc = (current_amount - previous_amount)
             current_max_inc_date = row[0]
         elif (current_amount - previous_amount) < current_max_inc:
             pass
+        # If the current amount - previous amount result is greater than current max decrease set max dec amount and date
         if (current_amount - previous_amount) < current_max_dec:
             current_max_dec = (current_amount - previous_amount)
             current_max_dec_date = row[0]
