@@ -59,11 +59,11 @@ output_path = os.path.join("..", "python_challenge", "budget_script.txt")
 with open("budget_script.txt", "w") as text_file:
     
     # print the following in the text file
-    print(f"Total months: {(len(unique_months))}")
-    print(f"Total: ${net_total}")
-    print(f"Average change: ${chg_sum/(row_count-1):0.2f}")
-    print(f"Greatest increase in profits: {current_max_inc_date} ($ {str(current_max_inc)} )")
-    print(f"Greatest decrease in profits: {current_max_dec_date} ($ {str(current_max_dec)} )")
+    print(f"Total months: {(len(unique_months))}", file=text_file)
+    print(f"Total: ${net_total}", file=text_file)
+    print(f"Average change: ${chg_sum/(row_count-1):0.2f}", file=text_file)
+    print(f"Greatest increase in profits: {current_max_inc_date} ($ {str(current_max_inc)} )", file=text_file)
+    print(f"Greatest decrease in profits: {current_max_dec_date} ($ {str(current_max_dec)} )", file=text_file)
 
 # Open the text file in read  mode and print results in terminal
 with open("budget_script.txt", "r") as text_file2:
