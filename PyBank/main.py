@@ -66,5 +66,5 @@ with open("budget_script.txt", "w") as text_file:
     print(f"Greatest decrease in profits: {current_max_dec_date} ($ {str(current_max_dec)} )")
 
 # Open the text file in read  mode and print results in terminal
-with open("text_script.txt", "r") as text_file2:
+with open("budget_script.txt", "r") as text_file2:
     print(text_file2.read())
