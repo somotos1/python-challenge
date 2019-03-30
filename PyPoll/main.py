@@ -22,12 +22,15 @@ with open('election_data.csv', 'r') as csvfile:
                 highest_vote_percentage = pollResults[name]['vote percentage']
         else:
             pollResults[name] = {'vote counts': 1, 'vote percentage': (1 / vote_count) * 100}
-print("Election Results")
-print("----------------------------")
-print(f"Total votes: {vote_count} ")
-print("----------------------------")
-for name in pollResults.keys():
-    print(f"{name}: {pollResults[name]['vote percentage']:0.3f}% ({pollResults[name]['vote counts']})")
-print("----------------------------")
-print(f"Winner: {current_winner}")
-print("----------------------------")
+output_path = os.path.join("..", "python_challenge", "text_script.txt")
+with open("text_script.txt", "w") as text_file:
+
+    print("Election Results")
+    print("----------------------------")
+    print(f"Total votes: {vote_count} ")
+    print("----------------------------")
+    for name in pollResults.keys():
+        print(f"{name}: {pollResults[name]['vote percentage']:0.3f}% ({pollResults[name]['vote counts']})")
+    print("----------------------------")
+    print(f"Winner: {current_winner}")
+    print("----------------------------")
