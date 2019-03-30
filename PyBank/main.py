@@ -52,8 +52,19 @@ with open('budget_data.csv', 'r') as csvfile:
         elif (current_amount - previous_amount) > current_max_dec:
             pass
         previous_amount = current_amount
+
+# Save path of file
+output_path = os.path.join("..", "python_challenge", "budget_script.txt")
+# Open file in write mode
+with open("budget_script.txt", "w") as text_file:
+    
+    # print the following in the text file
     print(f"Total months: {(len(unique_months))}")
     print(f"Total: ${net_total}")
     print(f"Average change: ${chg_sum/(row_count-1):0.2f}")
     print(f"Greatest increase in profits: {current_max_inc_date} ($ {str(current_max_inc)} )")
     print(f"Greatest decrease in profits: {current_max_dec_date} ($ {str(current_max_dec)} )")
+
+# Open the text file in read  mode and print results in terminal
+with open("text_script.txt", "r") as text_file2:
+    print(text_file2.read())
